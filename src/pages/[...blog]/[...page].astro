@@ -34,21 +34,19 @@ const metadata = {
 
 <Layout metadata={metadata}>
   <section class="px-6 sm:px-6 py-12 sm:py-16 lg:py-20 mx-auto max-w-4xl">
-    <Headline
-      subtitle={hasPosts ? 'News, updates, and research from TexNano.' : undefined}
-    >
-      The Blog
-    </Headline>
-    {hasPosts ? (
-      <>
-        <BlogList posts={page.data} />
-        <Pagination prevUrl={page.url.prev} nextUrl={page.url.next} />
-      </>
-    ) : (
-      <div class="text-center py-12 text-gray-600">
-        <p class="text-lg">Blog coming soon.</p>
-        <p class="mt-2 text-sm">We'll share updates and research here. Check back later.</p>
-      </div>
-    )}
+    <Headline subtitle={hasPosts ? 'News, updates, and research from TexNano.' : undefined}> The Blog </Headline>
+    {
+      hasPosts ? (
+        <>
+          <BlogList posts={page.data} />
+          <Pagination prevUrl={page.url.prev} nextUrl={page.url.next} />
+        </>
+      ) : (
+        <div class="text-center py-12 text-gray-600">
+          <p class="text-lg">Blog coming soon.</p>
+          <p class="mt-2 text-sm">We'll share updates and research here. Check back later.</p>
+        </div>
+      )
+    }
   </section>
 </Layout>

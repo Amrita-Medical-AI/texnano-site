@@ -11,7 +11,7 @@ metadata:
   title:
     default: Tex Nano
     template: '%s — Tex Nano'
-  description: "Medical AI research team. We develop AI methods and tools for healthcare—diagnostics, medical language models, and research platforms."
+  description: 'Medical AI research team. We develop AI methods and tools for healthcare—diagnostics, medical language models, and research platforms.'
   robots:
     index: true
     follow: true

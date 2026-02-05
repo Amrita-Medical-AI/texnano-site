@@ -10,9 +10,9 @@ export default {
       colors: {
         primary: '#0d9488', // Teal – medical / institutional
         secondary: '#0f766e',
-        accent: '#14b8a6',  // Lighter teal
-        default: '#1e293b',  // Slate-800
-        muted: '#64748b',    // Slate-500
+        accent: '#14b8a6', // Lighter teal
+        default: '#1e293b', // Slate-800
+        muted: '#64748b', // Slate-500
       },
       fontFamily: {
         sans: ['var(--aw-font-sans, ui-sans-serif)', ...defaultTheme.fontFamily.sans],
@@ -31,8 +31,8 @@ export default {
         },
       },
       fontSize: {
-        'body': ['0.9375rem', { lineHeight: '1.6' }],
-        'section': ['0.8125rem', { lineHeight: '1.5' }],
+        body: ['0.9375rem', { lineHeight: '1.6' }],
+        section: ['0.8125rem', { lineHeight: '1.5' }],
       },
     },
   },

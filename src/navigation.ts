@@ -11,7 +11,11 @@ export const footerData = {
   links: [],
   secondaryLinks: [],
   socialLinks: [
-    { ariaLabel: 'TexNano on LinkedIn', icon: 'tabler:brand-linkedin', href: 'https://www.linkedin.com/company/texnano/' },
+    {
+      ariaLabel: 'TexNano on LinkedIn',
+      icon: 'tabler:brand-linkedin',
+      href: 'https://www.linkedin.com/company/texnano/',
+    },
   ],
   footNote: `
     <span class="text-gray-700">TexNano</span> · Medical AI Research

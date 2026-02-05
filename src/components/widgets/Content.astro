@@ -25,12 +25,11 @@ const {
   bg = await Astro.slots.render('bg'),
 } = Astro.props;
 
-const headlineContainerClass = titleAlign === 'left'
-  ? 'max-w-2xl text-left'
-  : 'max-w-xl sm:mx-auto lg:max-w-2xl';
-const headlineSubtitleClass = titleAlign === 'left'
-  ? 'max-w-2xl text-left text-base text-gray-800 dark:text-muted'
-  : 'max-w-2xl mx-auto sm:text-center text-base text-gray-800 dark:text-muted';
+const headlineContainerClass = titleAlign === 'left' ? 'max-w-2xl text-left' : 'max-w-xl sm:mx-auto lg:max-w-2xl';
+const headlineSubtitleClass =
+  titleAlign === 'left'
+    ? 'max-w-2xl text-left text-base text-gray-800 dark:text-muted'
+    : 'max-w-2xl mx-auto sm:text-center text-base text-gray-800 dark:text-muted';
 ---
 
 <WidgetWrapper
@@ -62,19 +61,23 @@ const headlineSubtitleClass = titleAlign === 'left'
           )
         }
 
-        {items.length > 0 && <ItemGrid
-          items={items}
-          columns={columns}
-          defaultIcon="tabler:check"
-          classes={{
-            container: 'gap-y-3 md:gap-y-4',
-            panel: 'max-w-none',
-            title: 'text-base font-semibold text-default ml-2 rtl:ml-0 rtl:mr-2',
-            description: 'text-base text-gray-800 dark:text-muted mt-1.5 ml-2 rtl:ml-0 rtl:mr-2 leading-relaxed',
-            icon: 'flex h-7 w-7 items-center justify-center rounded-full bg-primary text-white p-1',
-            action: 'text-base font-medium text-default ml-2 rtl:ml-0 rtl:mr-2',
-          }}
-        />}
+        {
+          items.length > 0 && (
+            <ItemGrid
+              items={items}
+              columns={columns}
+              defaultIcon="tabler:check"
+              classes={{
+                container: 'gap-y-3 md:gap-y-4',
+                panel: 'max-w-none',
+                title: 'text-base font-semibold text-default ml-2 rtl:ml-0 rtl:mr-2',
+                description: 'text-base text-gray-800 dark:text-muted mt-1.5 ml-2 rtl:ml-0 rtl:mr-2 leading-relaxed',
+                icon: 'flex h-7 w-7 items-center justify-center rounded-full bg-primary text-white p-1',
+                action: 'text-base font-medium text-default ml-2 rtl:ml-0 rtl:mr-2',
+              }}
+            />
+          )
+        }
       </div>
       <div aria-hidden="true" class="mt-10 md:mt-0 md:basis-1/2">
         {

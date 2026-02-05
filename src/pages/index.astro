@@ -36,11 +36,16 @@ const team = [
     ]}
   >
     <Fragment slot="title">
-      <span class="text-primary">TexNano</span><span class="text-gray-900 dark:text-gray-100"> — real-time AI for diagnosis</span>
+      <span class="text-primary">TexNano</span><span class="text-gray-900 dark:text-gray-100">
+        — real-time AI for diagnosis</span
+      >
     </Fragment>
 
     <Fragment slot="subtitle">
-      <span class="text-gray-900 dark:text-gray-300">We develop real-time AI tools to assist doctors in diagnosing pancreatic cancer, liver disease, and heart conditions. Our focus is on providing clinicians with reliable, instant analysis to speed up patient care.</span>
+      <span class="text-gray-900 dark:text-gray-300"
+        >We develop real-time AI tools to assist doctors in diagnosing pancreatic cancer, liver disease, and heart
+        conditions. Our focus is on providing clinicians with reliable, instant analysis to speed up patient care.</span
+      >
     </Fragment>
 
     <Fragment slot="content">
@@ -58,7 +63,8 @@ const team = [
     items={[
       {
         title: 'Diagnostic AI',
-        description: 'ML models that support accurate, interpretable diagnosis — so clinicians can trust and act on the output.',
+        description:
+          'ML models that support accurate, interpretable diagnosis — so clinicians can trust and act on the output.',
         icon: 'tabler:brain',
       },
       {
@@ -95,14 +101,25 @@ const team = [
       subtitle="Pancreatic cancer detection using Endoscopic Ultrasound (EUS)."
       titleAlign="left"
       items={[
-        { title: 'Cancer detection', description: '94.12% sensitivity, 86.30% specificity, and 98.44% NPV (Negative Predictive Value).' },
+        {
+          title: 'Cancer detection',
+          description: '94.12% sensitivity, 86.30% specificity, and 98.44% NPV (Negative Predictive Value).',
+        },
         { title: 'Segmentation', description: '70% DICE score for pancreas segmentation.' },
-        { title: 'Real-time performance', description: 'EUSML-Inference App runs at ~21.28 FPS for real-time use during procedures.' },
+        {
+          title: 'Real-time performance',
+          description: 'EUSML-Inference App runs at ~21.28 FPS for real-time use during procedures.',
+        },
       ]}
       image={{ src: '~/assets/images/eusml.png', alt: 'EUS-ML — add project image' }}
     >
       <Fragment slot="content">
-        <p class="mb-4">Developed tools for pancreatic cancer detection using Endoscopic Ultrasound (EUS). The project involved <strong>Segmentation</strong> (finding the pancreas and tumor) and <strong>Classification</strong> (determining if a patient has cancer). The team utilized a dataset comprising 400+ annotated patient videos.</p>
+        <p class="mb-4">
+          Developed tools for pancreatic cancer detection using Endoscopic Ultrasound (EUS). The project involved <strong
+            >Segmentation</strong
+          > (finding the pancreas and tumor) and <strong>Classification</strong> (determining if a patient has cancer). The
+          team utilized a dataset comprising 400+ annotated patient videos.
+        </p>
       </Fragment>
     </Content>
 
@@ -114,12 +131,21 @@ const team = [
       subtitle="Differentiating fatty liver from non-fatty liver using AI and widely available ultrasound."
       titleAlign="left"
       items={[
-        { title: 'Impact', description: 'The project aims to achieve accuracy similar to Fibroscan while drastically reducing the cost of testing from ₹3,000–₹10,000 to approximately ₹600–₹800 per test, expanding access to millions.' },
+        {
+          title: 'Impact',
+          description:
+            'The project aims to achieve accuracy similar to Fibroscan while drastically reducing the cost of testing from ₹3,000–₹10,000 to approximately ₹600–₹800 per test, expanding access to millions.',
+        },
       ]}
       image={{ src: '~/assets/images/liver.png', alt: 'Fatty-Liver Diagnosis — add project image' }}
     >
       <Fragment slot="content">
-        <p class="mb-4">Focused on differentiating fatty liver from non-fatty liver by teaching AI to learn <strong>Liver Steatosis</strong> and <strong>Fibrosis</strong> scores from normal ultrasound images. The objective is to replicate the expensive "Gold Standard" Fibroscan results using widely available, cheaper ultrasound machines.</p>
+        <p class="mb-4">
+          Focused on differentiating fatty liver from non-fatty liver by teaching AI to learn <strong
+            >Liver Steatosis</strong
+          > and <strong>Fibrosis</strong> scores from normal ultrasound images. The objective is to replicate the expensive
+          "Gold Standard" Fibroscan results using widely available, cheaper ultrasound machines.
+        </p>
       </Fragment>
     </Content>
 
@@ -131,13 +157,24 @@ const team = [
       titleAlign="left"
       items={[
         { title: 'Whole heart segmentation', description: '0.9 DICE score for whole heart segmentation (bloodpool).' },
-        { title: 'Chamber and vessel segmentation', description: '0.783 DICE score for chamber and vessel segmentation.' },
-        { title: 'VR & 3D Lab', description: 'A VR and 3D Lab where surgeons perform VR consultations to gain confidence for complex surgeries.' },
+        {
+          title: 'Chamber and vessel segmentation',
+          description: '0.783 DICE score for chamber and vessel segmentation.',
+        },
+        {
+          title: 'VR & 3D Lab',
+          description:
+            'A VR and 3D Lab where surgeons perform VR consultations to gain confidence for complex surgeries.',
+        },
       ]}
       image={{ src: '~/assets/images/vr-heart.png', alt: 'VR-Heart — add project image' }}
     >
       <Fragment slot="content">
-        <p class="mb-4">Addressed the challenge surgeons face in visualizing 2D scans as 3D structures for Congenital Heart Disease (CHD). The team used AI to automate the segmentation of the heart from CT scans (reducing manual time from 2–3 hours), allowing the heart models to be loaded into Virtual Reality for surgical consultations.</p>
+        <p class="mb-4">
+          Addressed the challenge surgeons face in visualizing 2D scans as 3D structures for Congenital Heart Disease
+          (CHD). The team used AI to automate the segmentation of the heart from CT scans (reducing manual time from 2–3
+          hours), allowing the heart models to be loaded into Virtual Reality for surgical consultations.
+        </p>
       </Fragment>
     </Content>
 
@@ -152,7 +189,11 @@ const team = [
       image={{ src: '~/assets/images/ulcerative-colitis.png', alt: 'Ulcerative Colitis Diagnosis — add project image' }}
     >
       <Fragment slot="content">
-        <p class="mb-4">Investigating the use of AI to diagnose the severity of Inflammatory Bowel Disease (IBD) / Ulcerative Colitis to make biopsies non-required. The goal is to predict histopathology Nancy score using AI, making the process less invasive, cheaper, and faster than the traditional workflow.</p>
+        <p class="mb-4">
+          Investigating the use of AI to diagnose the severity of Inflammatory Bowel Disease (IBD) / Ulcerative Colitis
+          to make biopsies non-required. The goal is to predict histopathology Nancy score using AI, making the process
+          less invasive, cheaper, and faster than the traditional workflow.
+        </p>
       </Fragment>
     </Content>
   </WidgetWrapper>
@@ -169,44 +210,48 @@ const team = [
     </WidgetWrapper>
     <div class="max-w-5xl mx-auto px-4 sm:px-6 pb-5 md:pb-6">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 justify-items-center">
-        {topTeam.map((person) => (
-          <div class="flex flex-col items-center text-center w-full max-w-[200px] md:max-w-[220px]">
-            <div class="w-40 sm:w-44 aspect-[4/3] rounded-lg overflow-hidden bg-gray-100 dark:bg-slate-700 mb-2 flex-shrink-0">
-              <Image
-                src={person.image}
-                alt={person.name}
-                width={352}
-                height={264}
-                widths={[280, 352]}
-                sizes="(max-width: 640px) 160px, 176px"
-                class="w-full h-full object-cover"
-              />
+        {
+          topTeam.map((person) => (
+            <div class="flex flex-col items-center text-center w-full max-w-[200px] md:max-w-[220px]">
+              <div class="w-40 sm:w-44 aspect-[4/3] rounded-lg overflow-hidden bg-gray-100 dark:bg-slate-700 mb-2 flex-shrink-0">
+                <Image
+                  src={person.image}
+                  alt={person.name}
+                  width={352}
+                  height={264}
+                  widths={[280, 352]}
+                  sizes="(max-width: 640px) 160px, 176px"
+                  class="w-full h-full object-cover"
+                />
+              </div>
+              <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100">{person.name}</h3>
+              <p class="text-primary text-sm mt-0.5">{person.designation}</p>
             </div>
-            <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100">{person.name}</h3>
-            <p class="text-primary text-sm mt-0.5">{person.designation}</p>
-          </div>
-        ))}
+          ))
+        }
       </div>
     </div>
     <div class="max-w-5xl mx-auto px-4 sm:px-6 py-5 md:py-6 border-t border-gray-200 dark:border-slate-700">
       <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 gap-5 md:gap-6 justify-items-center">
-        {team.map((person) => (
-          <div class="flex flex-col items-center text-center w-full max-w-[140px] sm:max-w-[160px]">
-            <div class="w-24 h-24 sm:w-28 sm:h-28 rounded-lg overflow-hidden bg-gray-100 dark:bg-slate-700 mb-2 flex-shrink-0">
-              <Image
-                src={person.image}
-                alt={person.name}
-                width={224}
-                height={224}
-                widths={[192, 224]}
-                sizes="(max-width: 640px) 96px, 112px"
-                class="w-full h-full object-cover"
-              />
+        {
+          team.map((person) => (
+            <div class="flex flex-col items-center text-center w-full max-w-[140px] sm:max-w-[160px]">
+              <div class="w-24 h-24 sm:w-28 sm:h-28 rounded-lg overflow-hidden bg-gray-100 dark:bg-slate-700 mb-2 flex-shrink-0">
+                <Image
+                  src={person.image}
+                  alt={person.name}
+                  width={224}
+                  height={224}
+                  widths={[192, 224]}
+                  sizes="(max-width: 640px) 96px, 112px"
+                  class="w-full h-full object-cover"
+                />
+              </div>
+              <h3 class="text-sm font-semibold text-gray-900 dark:text-gray-100">{person.name}</h3>
+              <p class="text-gray-800 dark:text-muted text-xs mt-0.5">{person.designation}</p>
             </div>
-            <h3 class="text-sm font-semibold text-gray-900 dark:text-gray-100">{person.name}</h3>
-            <p class="text-gray-800 dark:text-muted text-xs mt-0.5">{person.designation}</p>
-          </div>
-        ))}
+          ))
+        }
       </div>
     </div>
   </section>
@@ -215,9 +260,7 @@ const team = [
     id="contact-cta"
     actions={[{ variant: 'primary', text: 'Get in touch', href: 'mailto:anshumanswain@am.amrita.edu' }]}
   >
-    <Fragment slot="title">
-      Work with us
-    </Fragment>
+    <Fragment slot="title"> Work with us </Fragment>
     <Fragment slot="subtitle">
       Partnerships, funding, or joint research — we're interested. Reach out to discuss how we can collaborate.
     </Fragment>

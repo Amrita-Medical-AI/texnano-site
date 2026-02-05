@@ -32,27 +32,35 @@ const { socialLinks = [], secondaryLinks = [], footNote = '', theme = 'light' } 
     <div class="flex flex-wrap items-center justify-center gap-x-3 gap-y-1 sm:justify-between">
       <div class="flex flex-wrap items-center justify-center gap-x-2 sm:justify-start">
         <a class="font-semibold text-gray-900 hover:text-primary transition" href={getHomePermalink()}>{SITE?.name}</a>
-        {secondaryLinks.length > 0 && (
-          <>
-            <span class="text-gray-400">·</span>
-            {secondaryLinks.map(({ text, href }, index) => (
-              <>
-                {index !== 0 ? ' ' : ''}
-                <a class="text-gray-600 hover:text-gray-900 hover:underline" href={href} set:html={text} />
-              </>
-            ))}
-          </>
-        )}
+        {
+          secondaryLinks.length > 0 && (
+            <>
+              <span class="text-gray-400">·</span>
+              {secondaryLinks.map(({ text, href }, index) => (
+                <>
+                  {index !== 0 ? ' ' : ''}
+                  <a class="text-gray-600 hover:text-gray-900 hover:underline" href={href} set:html={text} />
+                </>
+              ))}
+            </>
+          )
+        }
       </div>
-      {socialLinks?.length > 0 && (
-        <div class="flex items-center gap-1">
-          {socialLinks.map(({ ariaLabel, href, icon }) => (
-            <a class="text-gray-600 hover:text-primary p-1.5 rounded transition inline-flex" aria-label={ariaLabel} href={href}>
-              {icon && <Icon name={icon} class="w-6 h-6" />}
-            </a>
-          ))}
-        </div>
-      )}
+      {
+        socialLinks?.length > 0 && (
+          <div class="flex items-center gap-1">
+            {socialLinks.map(({ ariaLabel, href, icon }) => (
+              <a
+                class="text-gray-600 hover:text-primary p-1.5 rounded transition inline-flex"
+                aria-label={ariaLabel}
+                href={href}
+              >
+                {icon && <Icon name={icon} class="w-6 h-6" />}
+              </a>
+            ))}
+          </div>
+        )
+      }
     </div>
     <div class="mt-1.5 text-center sm:text-left text-gray-600 text-xs">
       <Fragment set:html={footNote} />

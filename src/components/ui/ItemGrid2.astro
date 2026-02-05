@@ -45,7 +45,14 @@ const {
           )}
           <div class={twMerge('text-base font-semibold text-default', titleClass, itemClasses?.title)}>{title}</div>
           {description && (
-            <p class={twMerge('text-base text-gray-800 dark:text-muted mt-1.5 leading-relaxed', descriptionClass, itemClasses?.description)} set:html={description} />
+            <p
+              class={twMerge(
+                'text-base text-gray-800 dark:text-muted mt-1.5 leading-relaxed',
+                descriptionClass,
+                itemClasses?.description
+              )}
+              set:html={description}
+            />
           )}
           {callToAction && (
             <div class="mt-2">
