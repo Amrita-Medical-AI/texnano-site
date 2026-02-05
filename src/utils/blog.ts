@@ -176,7 +176,27 @@ export const findLatestPosts = async ({ count }: { count?: number }): Promise<Ar
 /** */
 export const getStaticPathsBlogList = async ({ paginate }: { paginate: PaginateFunction }) => {
   if (!isBlogEnabled || !isBlogListRouteEnabled) return [];
-  return paginate(await fetchPosts(), {
+  const posts = await fetchPosts();
+  if (posts.length === 0) {
+    return [
+      {
+        params: { blog: BLOG_BASE || undefined },
+        props: {
+          page: {
+            data: [],
+            url: { prev: undefined, next: undefined, current: `/${BLOG_BASE || 'blog'}` },
+            currentPage: 1,
+            size: 0,
+            start: 0,
+            end: 0,
+            total: 0,
+            lastPage: 1,
+          },
+        },
+      },
+    ];
+  }
+  return paginate(posts, {
     params: { blog: BLOG_BASE || undefined },
     pageSize: blogPostsPerPage,
   });

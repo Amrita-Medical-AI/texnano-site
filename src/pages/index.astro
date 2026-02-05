@@ -1,157 +1,225 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
-
 import Hero from '~/components/widgets/Hero.astro';
 import Features from '~/components/widgets/Features.astro';
-import Features2 from '~/components/widgets/Features2.astro';
-import Steps from '~/components/widgets/Steps.astro';
 import Content from '~/components/widgets/Content.astro';
-import FAQs from '~/components/widgets/FAQs.astro';
-import Stats from '~/components/widgets/Stats.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
+import Headline from '~/components/ui/Headline.astro';
+import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
+import Image from '~/components/common/Image.astro';
 
 const metadata = {
-  title: 'Tex Nano - Advanced AI Medical Technology & Research',
+  title: 'TexNano — Medical AI Research',
   ignoreTitleTemplate: true,
 };
+
+// Team data (moved from team page)
+const topTeam = [
+  { name: 'Dr. Priya Nair', designation: 'Project Lead', image: '~/assets/images/dr-priya-nair.png' },
+  { name: 'Gilad Gressel', designation: 'Research Director', image: '~/assets/images/gilad.png' },
+];
+const team = [
+  { name: 'Abhijit Ramesh', designation: 'Lead Engineer', image: '~/assets/images/abhijit.png' },
+  { name: 'Gautham Krishnan', designation: 'AI Engineer', image: '~/assets/images/gautham.jpeg' },
+  { name: 'Anshuman Swain', designation: 'AI Engineer', image: '~/assets/images/anshuman.jpeg' },
+  { name: 'Anushka Kaimal', designation: 'AI Engineer', image: '~/assets/images/anushka.jpeg' },
+  { name: 'Aniketh ', designation: 'AI Engineer', image: '~/assets/images/aniketh.png' },
+  { name: 'Srisharanyan', designation: 'AI Engineer', image: '~/assets/images/sharan.png' },
+];
 ---
 
 <Layout metadata={metadata}>
-  <!-- Hero Widget ******************* -->
-
   <Hero
     actions={[
-      {
-        variant: 'primary',
-        text: 'Learn More',
-        href: '#features',
-      },
-      { text: 'Contact Us', href: '/contact' },
+      { variant: 'primary', text: 'Our Research', href: '#research' },
+      { text: 'Contact', href: 'mailto:anshumanswain@am.amrita.edu' },
     ]}
-    image={{ src: '~/assets/images/medical-ai.jpg', alt: 'Tex Nano AI Medical Technology' }}
   >
     <Fragment slot="title">
-      Revolutionizing Healthcare with <span class="text-accent dark:text-white highlight">AI Technology</span>
+      <span class="text-primary">TexNano</span><span class="text-gray-900 dark:text-gray-100"> — real-time AI for diagnosis</span>
     </Fragment>
 
     <Fragment slot="subtitle">
-      <span class="hidden sm:inline">
-        <span class="font-semibold">Tex Nano</span> combines cutting-edge artificial intelligence with advanced medical research
-      </span>
-      to develop next-generation diagnostic tools and treatment solutions. Our AI-powered platforms are transforming healthcare
-      delivery and improving patient outcomes.
+      <span class="text-gray-900 dark:text-gray-300">We develop real-time AI tools to assist doctors in diagnosing pancreatic cancer, liver disease, and heart conditions. Our focus is on providing clinicians with reliable, instant analysis to speed up patient care.</span>
+    </Fragment>
+
+    <Fragment slot="content">
+      <p class="text-sm text-gray-900 dark:text-gray-400 mt-5 font-medium">
+        Amrita Institute of Medical Sciences, Kochi & Amrita Vishwa Vidyapeetham, Amritapuri · Kerala
+      </p>
     </Fragment>
   </Hero>
 
-  <!-- Features Widget *************** -->
-
   <Features
     id="features"
-    tagline="Our Solutions"
-    title="Advancing Healthcare Through AI"
-    subtitle="Discover how our AI-powered solutions are revolutionizing medical diagnosis, research, and treatment."
+    tagline="What we do"
+    title="From imaging to decisions"
+    subtitle="We work across the pipeline: better models, clearer outputs, and deployment that fits the clinic."
     items={[
       {
-        title: 'AI Diagnostic Tools',
-        description:
-          'Advanced machine learning algorithms for rapid and accurate medical diagnosis across multiple specialties.',
+        title: 'Diagnostic AI',
+        description: 'ML models that support accurate, interpretable diagnosis — so clinicians can trust and act on the output.',
         icon: 'tabler:brain',
       },
       {
-        title: 'Medical LLMs',
-        description:
-          'Specialized large language models trained on medical literature to assist healthcare professionals in decision-making.',
+        title: 'Medical language models',
+        description: 'Models trained on medical literature to assist with clinical reasoning and documentation.',
         icon: 'tabler:dna',
       },
       {
-        title: 'Research Platform',
-        description:
-          'AI-powered research tools for drug discovery, clinical trials, and medical data analysis.',
-        icon: 'tabler:microscope',
-      },
-      {
-        title: 'Patient Care Analytics',
-        description:
-          'Real-time monitoring and predictive analytics for improved patient care and treatment outcomes.',
-        icon: 'tabler:heartbeat',
-      },
-      {
-        title: 'Medical Imaging AI',
-        description:
-          'State-of-the-art image recognition and analysis for radiology, pathology, and medical imaging.',
+        title: 'Medical imaging',
+        description: 'Image analysis for radiology and pathology — segmentation, classification, and quality at scale.',
         icon: 'tabler:scan',
       },
       {
-        title: 'Healthcare Integration',
-        description:
-          'Seamless integration with existing healthcare systems and workflows for enhanced efficiency.',
+        title: 'Clinical integration',
+        description: 'Deployment designed for existing workflows and healthcare systems.',
         icon: 'tabler:network',
       },
     ]}
   />
 
-  <!-- Stats Widget ****************** -->
+  <!-- Research section -->
+  <WidgetWrapper id="research" containerClass="max-w-4xl mx-auto px-4 md:px-6 py-8 md:py-10 lg:py-12">
+    <Headline
+      tagline="Research"
+      title="Our research work"
+      subtitle="AI for medical imaging and diagnosis — from pancreatic cancer and fatty liver to congenital heart disease and inflammatory bowel disease."
+      classes={{ container: 'max-w-2xl mx-auto text-center mb-10' }}
+    />
 
-  <Stats
-    stats={[
-      { title: 'Active Hospitals', amount: '500+' },
-      { title: 'Patients Analyzed', amount: '1M+' },
-      { title: 'Accuracy Rate', amount: '99.9%' },
-      { title: 'Research Papers', amount: '150+' },
-    ]}
-  />
+    <Content
+      id="eusml"
+      tagline="Project"
+      title="EUS-ML"
+      subtitle="Pancreatic cancer detection using Endoscopic Ultrasound (EUS)."
+      titleAlign="left"
+      items={[
+        { title: 'Cancer detection', description: '94.12% sensitivity, 86.30% specificity, and 98.44% NPV (Negative Predictive Value).' },
+        { title: 'Segmentation', description: '70% DICE score for pancreas segmentation.' },
+        { title: 'Real-time performance', description: 'EUSML-Inference App runs at ~21.28 FPS for real-time use during procedures.' },
+      ]}
+      image={{ src: '~/assets/images/eusml.png', alt: 'EUS-ML — add project image' }}
+    >
+      <Fragment slot="content">
+        <p class="mb-4">Developed tools for pancreatic cancer detection using Endoscopic Ultrasound (EUS). The project involved <strong>Segmentation</strong> (finding the pancreas and tumor) and <strong>Classification</strong> (determining if a patient has cancer). The team utilized a dataset comprising 400+ annotated patient videos.</p>
+      </Fragment>
+    </Content>
 
-  <!-- Content Widget **************** -->
+    <Content
+      id="fatty-liver"
+      isReversed
+      tagline="Project"
+      title="Fatty-Liver Diagnosis"
+      subtitle="Differentiating fatty liver from non-fatty liver using AI and widely available ultrasound."
+      titleAlign="left"
+      items={[
+        { title: 'Impact', description: 'The project aims to achieve accuracy similar to Fibroscan while drastically reducing the cost of testing from ₹3,000–₹10,000 to approximately ₹600–₹800 per test, expanding access to millions.' },
+      ]}
+      image={{ src: '~/assets/images/liver.png', alt: 'Fatty-Liver Diagnosis — add project image' }}
+    >
+      <Fragment slot="content">
+        <p class="mb-4">Focused on differentiating fatty liver from non-fatty liver by teaching AI to learn <strong>Liver Steatosis</strong> and <strong>Fibrosis</strong> scores from normal ultrasound images. The objective is to replicate the expensive "Gold Standard" Fibroscan results using widely available, cheaper ultrasound machines.</p>
+      </Fragment>
+    </Content>
 
-  <Content
-    isReversed
-    tagline="AI Innovation"
-    title="Next-Generation Medical AI"
-    items={[
-      {
-        title: 'Deep Learning Models',
-        description:
-          'Our proprietary deep learning models are trained on vast medical datasets for superior diagnostic accuracy.',
-      },
-      {
-        title: 'Real-time Analysis',
-        description:
-          'Process and analyze medical data in real-time for immediate insights and decision support.',
-      },
-      {
-        title: 'Continuous Learning',
-        description:
-          'Our AI systems continuously learn and improve from new medical data and research findings.',
-      },
-    ]}
-    image={{
-      src: '~/assets/images/medical-research.jpg',
-      alt: 'Medical AI Research',
-    }}
-  >
-    <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Transforming Healthcare</h3>
-      Leveraging advanced AI technology to revolutionize medical diagnosis and treatment
-    </Fragment>
-  </Content>
+    <Content
+      id="vr-heart"
+      tagline="Project"
+      title="VR-Heart"
+      subtitle="3D heart visualization from CT for Congenital Heart Disease (CHD) and VR surgical consultations."
+      titleAlign="left"
+      items={[
+        { title: 'Whole heart segmentation', description: '0.9 DICE score for whole heart segmentation (bloodpool).' },
+        { title: 'Chamber and vessel segmentation', description: '0.783 DICE score for chamber and vessel segmentation.' },
+        { title: 'VR & 3D Lab', description: 'A VR and 3D Lab where surgeons perform VR consultations to gain confidence for complex surgeries.' },
+      ]}
+      image={{ src: '~/assets/images/vr-heart.png', alt: 'VR-Heart — add project image' }}
+    >
+      <Fragment slot="content">
+        <p class="mb-4">Addressed the challenge surgeons face in visualizing 2D scans as 3D structures for Congenital Heart Disease (CHD). The team used AI to automate the segmentation of the heart from CT scans (reducing manual time from 2–3 hours), allowing the heart models to be loaded into Virtual Reality for surgical consultations.</p>
+      </Fragment>
+    </Content>
 
-  <!-- CallToAction Widget *********** -->
+    <Content
+      id="ulcerative-colitis"
+      isReversed
+      tagline="Project"
+      title="Ulcerative Colitis Diagnosis"
+      subtitle="AI to assess severity of IBD / Ulcerative Colitis and reduce reliance on biopsies."
+      titleAlign="left"
+      items={[]}
+      image={{ src: '~/assets/images/ulcerative-colitis.png', alt: 'Ulcerative Colitis Diagnosis — add project image' }}
+    >
+      <Fragment slot="content">
+        <p class="mb-4">Investigating the use of AI to diagnose the severity of Inflammatory Bowel Disease (IBD) / Ulcerative Colitis to make biopsies non-required. The goal is to predict histopathology Nancy score using AI, making the process less invasive, cheaper, and faster than the traditional workflow.</p>
+      </Fragment>
+    </Content>
+  </WidgetWrapper>
+
+  <!-- Team section -->
+  <section id="team" class="relative scroll-mt-[72px] border-t border-gray-200 dark:border-slate-700">
+    <WidgetWrapper id="team-heading" containerClass="max-w-4xl mx-auto px-4 md:px-6 py-5 md:py-6">
+      <Headline
+        tagline="Team"
+        title="Our team"
+        subtitle="Researchers and clinicians at Amrita Institute of Medical Sciences, Kochi & Amrita Vishwa Vidyapeetham, Amritapuri."
+        classes={{ container: 'max-w-2xl mx-auto text-center' }}
+      />
+    </WidgetWrapper>
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 pb-5 md:pb-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 justify-items-center">
+        {topTeam.map((person) => (
+          <div class="flex flex-col items-center text-center w-full max-w-[200px] md:max-w-[220px]">
+            <div class="w-40 sm:w-44 aspect-[4/3] rounded-lg overflow-hidden bg-gray-100 dark:bg-slate-700 mb-2 flex-shrink-0">
+              <Image
+                src={person.image}
+                alt={person.name}
+                width={352}
+                height={264}
+                widths={[280, 352]}
+                sizes="(max-width: 640px) 160px, 176px"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100">{person.name}</h3>
+            <p class="text-primary text-sm mt-0.5">{person.designation}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 py-5 md:py-6 border-t border-gray-200 dark:border-slate-700">
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 gap-5 md:gap-6 justify-items-center">
+        {team.map((person) => (
+          <div class="flex flex-col items-center text-center w-full max-w-[140px] sm:max-w-[160px]">
+            <div class="w-24 h-24 sm:w-28 sm:h-28 rounded-lg overflow-hidden bg-gray-100 dark:bg-slate-700 mb-2 flex-shrink-0">
+              <Image
+                src={person.image}
+                alt={person.name}
+                width={224}
+                height={224}
+                widths={[192, 224]}
+                sizes="(max-width: 640px) 96px, 112px"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <h3 class="text-sm font-semibold text-gray-900 dark:text-gray-100">{person.name}</h3>
+            <p class="text-gray-800 dark:text-muted text-xs mt-0.5">{person.designation}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
 
   <CallToAction
-    actions={[
-      {
-        variant: 'primary',
-        text: 'Get Started',
-        href: '/contact',
-      },
-    ]}
+    id="contact-cta"
+    actions={[{ variant: 'primary', text: 'Get in touch', href: 'mailto:anshumanswain@am.amrita.edu' }]}
   >
     <Fragment slot="title">
-      Transform Your Healthcare Practice with AI
+      Work with us
     </Fragment>
-
     <Fragment slot="subtitle">
-      Join leading healthcare institutions in adopting Tex Nano's advanced AI solutions.
+      Partnerships, funding, or joint research — we're interested. Reach out to discuss how we can collaborate.
     </Fragment>
   </CallToAction>
 </Layout>

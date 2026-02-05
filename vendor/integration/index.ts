@@ -12,10 +12,7 @@ export default ({ config: _themeConfig = 'src/config.yaml' } = {}): AstroIntegra
 
     hooks: {
       'astro:config:setup': async ({
-        // command,
         config,
-        // injectRoute,
-        // isRestart,
         logger,
         updateConfig,
         addWatchFile,
@@ -63,9 +60,9 @@ export default ({ config: _themeConfig = 'src/config.yaml' } = {}): AstroIntegra
         if (typeof _themeConfig === 'string') {
           addWatchFile(new URL(_themeConfig, config.root));
 
-          buildLogger.info(`Astrowind \`${_themeConfig}\` has been loaded.`);
+          buildLogger.info(`Tex Nano \`${_themeConfig}\` has been loaded.`);
         } else {
-          buildLogger.info(`Astrowind config has been loaded.`);
+          buildLogger.info(`Tex Nano config has been loaded.`);
         }
       },
       'astro:config:done': async ({ config }) => {

@@ -2,6 +2,39 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Scientific / research background – subtle grid, gradient, and medical motifs */
+.scientific-bg {
+  position: relative;
+}
+.scientific-bg::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -10;
+  pointer-events: none;
+  background: radial-gradient(ellipse 80% 50% at 50% -20%, rgba(13, 148, 136, 0.07), transparent 60%);
+}
+.scientific-bg::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -10;
+  pointer-events: none;
+  opacity: 0.5;
+  background-image: url("data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='4' cy='4' r='0.5' fill='%231e293b' fill-opacity='0.06'/%3E%3Ccircle cx='20' cy='4' r='0.5' fill='%231e293b' fill-opacity='0.06'/%3E%3Ccircle cx='4' cy='20' r='0.5' fill='%231e293b' fill-opacity='0.06'/%3E%3Ccircle cx='20' cy='20' r='0.5' fill='%231e293b' fill-opacity='0.06'/%3E%3C/svg%3E");
+}
+
+/* Hexagon / molecular pattern – medical lab / crystal feel */
+.scientific-bg-hex {
+  position: fixed;
+  inset: 0;
+  z-index: -10;
+  pointer-events: none;
+  opacity: 0.05;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='28' viewBox='0 0 24 28'%3E%3Cpath d='M12 0l10 7v14l-10 7L2 21V7L12 0z' fill='none' stroke='%230d9488' stroke-width='0.4'/%3E%3C/svg%3E");
+  background-size: 24px 28px;
+}
+
 @layer utilities {
   .bg-page {
     background-color: var(--aw-color-bg-page);
@@ -22,11 +55,11 @@
 
 @layer components {
   .btn {
-    @apply inline-flex items-center justify-center rounded-full border-gray-400 border bg-transparent font-medium text-center text-base text-page leading-snug transition py-3.5 px-6 md:px-8 ease-in duration-200 focus:ring-blue-600 focus:ring-offset-blue-200 focus:ring-2 focus:ring-offset-2 hover:bg-gray-100 hover:border-gray-600 dark:text-slate-300 dark:border-slate-500 dark:hover:bg-slate-800 dark:hover:border-slate-800 cursor-pointer;
+    @apply inline-flex items-center justify-center rounded border-gray-400 border bg-transparent font-medium text-center text-base text-page leading-snug transition py-2.5 px-5 ease-in duration-200 focus:ring-primary focus:ring-offset-2 focus:ring-2 hover:bg-gray-100 hover:border-gray-600 dark:text-slate-300 dark:border-slate-500 dark:hover:bg-slate-800 dark:hover:border-slate-800 cursor-pointer;
   }
 
   .btn-primary {
-    @apply btn font-semibold bg-blue-600 text-white border-blue-600 hover:bg-blue-800 hover:border-blue-800 hover:text-white dark:text-white dark:bg-blue-600 dark:border-blue-600 dark:hover:border-blue-800 dark:hover:bg-blue-800;
+    @apply btn font-semibold bg-primary text-white border-primary hover:opacity-90 hover:border-primary hover:text-white dark:text-white dark:bg-primary dark:border-primary dark:hover:opacity-90;
   }
 
   .btn-secondary {

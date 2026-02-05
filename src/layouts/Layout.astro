@@ -26,7 +26,7 @@ const { language, textDirection } = I18N;
 ---
 
 <!doctype html>
-<html lang={language} dir={textDirection} class="2xl:text-[20px]">
+<html lang={language} dir={textDirection} class="text-[16px]" data-color-scheme="light">
   <head>
     <CommonMeta />
     <Favicons />
@@ -40,7 +40,22 @@ const { language, textDirection } = I18N;
     <ClientRouter fallback="swap" />
   </head>
 
-  <body class="antialiased text-default bg-page tracking-tight">
+  <body class="antialiased text-gray-900 bg-page tracking-tight text-[16px] scientific-bg font-medium">
+    <!-- Hexagon / molecular pattern overlay -->
+    <div class="scientific-bg-hex" aria-hidden="true"></div>
+    <!-- Static ECG-style waveform (top-right, medical) -->
+    <div class="fixed top-20 right-0 w-48 md:w-64 h-24 pointer-events-none -z-10 opacity-[0.05]" aria-hidden="true">
+      <svg class="w-full h-full text-primary" viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0 20 L20 20 L25 8 L30 32 L35 20 L120 20" stroke="currentColor" stroke-width="0.6" fill="none"/>
+      </svg>
+    </div>
+    <!-- Abstract double-helix curve (left side, DNA-inspired) -->
+    <div class="fixed left-0 top-1/3 w-32 md:w-40 h-48 pointer-events-none -z-10 opacity-[0.04]" aria-hidden="true">
+      <svg class="w-full h-full text-default" viewBox="0 0 60 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M10 0 Q30 25 10 50 Q-10 75 10 100" stroke="currentColor" stroke-width="0.5" fill="none"/>
+        <path d="M50 0 Q30 25 50 50 Q70 75 50 100" stroke="currentColor" stroke-width="0.5" fill="none"/>
+      </svg>
+    </div>
     <slot />
 
     <BasicScripts />
