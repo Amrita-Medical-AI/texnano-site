@@ -19,8 +19,11 @@ interface MenuLink extends Link {
 export interface Props {
   id?: string;
   links?: Array<MenuLink>;
+  actions?: Array<{ variant?: string; text?: string; href?: string }>;
   isSticky?: boolean;
   isFullWidth?: boolean;
+  showToggleTheme?: boolean;
+  position?: string;
 }
 
 const {

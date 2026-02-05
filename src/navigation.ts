@@ -1,5 +1,3 @@
-import { getPermalink, getBlogPermalink } from './utils/permalinks';
-
 export const headerData = {
   links: [
     { text: 'Research', href: '/#research' },
