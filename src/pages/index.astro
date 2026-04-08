@@ -11,12 +11,17 @@ import Image from '~/components/common/Image.astro';
 const metadata = {
   title: 'TexNano — Medical AI Research',
   ignoreTitleTemplate: true,
+  description:
+    'TexNano develops real-time AI tools for medical diagnosis: pancreatic cancer, liver disease, and heart conditions. Research at Amrita Institute of Medical Sciences, Kochi.',
+  openGraph: {
+    type: 'website',
+  },
 };
 
 // Team data (moved from team page)
 const topTeam = [
   { name: 'Dr. Priya Nair', designation: 'Project Lead', image: '~/assets/images/dr-priya-nair.png' },
-  { name: 'Gilad Gressel', designation: 'Research Director', image: '~/assets/images/gilad.png' },
+  { name: 'Gilad Gressel', designation: 'Research Director', image: '~/assets/images/gilad.jpg' },
 ];
 const team = [
   { name: 'Abhijit Ramesh', designation: 'Lead Engineer', image: '~/assets/images/abhijit.png' },
@@ -86,29 +91,33 @@ const team = [
   />
 
   <!-- Research section -->
-  <WidgetWrapper id="research" containerClass="max-w-4xl mx-auto px-4 md:px-6 py-8 md:py-10 lg:py-12">
+  <WidgetWrapper id="research" containerClass="max-w-4xl mx-auto px-4 md:px-6 pt-8 pb-8 md:pt-10 md:pb-10 lg:pt-12 lg:pb-12">
     <Headline
       tagline="Research"
       title="Our research work"
       subtitle="AI for medical imaging and diagnosis — from pancreatic cancer and fatty liver to congenital heart disease and inflammatory bowel disease."
-      classes={{ container: 'max-w-2xl mx-auto text-center mb-10' }}
+      classes={{ container: 'max-w-2xl mx-auto text-center mb-5' }}
     />
 
     <Content
       id="eusml"
+      classes={{ container: 'py-0 pt-4 md:pt-6 pb-6 md:pb-8' }}
       tagline="Project"
       title="EUS-ML"
       subtitle="Pancreatic cancer detection using Endoscopic Ultrasound (EUS)."
       titleAlign="left"
       items={[
         {
-          title: 'Cancer detection',
-          description: '94.12% sensitivity, 86.30% specificity, and 98.44% NPV (Negative Predictive Value).',
+          title: 'Classification',
+          description: '<strong>94.12%</strong> sensitivity, <strong>86.30%</strong> specificity, <strong>98.44%</strong> NPV (Negative Predictive Value).',
         },
-        { title: 'Segmentation', description: '70% DICE score for pancreas segmentation.' },
         {
-          title: 'Real-time performance',
-          description: 'EUSML-Inference App runs at ~21.28 FPS for real-time use during procedures.',
+          title: 'Segmentation',
+          description: '<strong>70%</strong> DICE score for pancreas segmentation from EUS video.',
+        },
+        {
+          title: 'Real-time inference',
+          description: 'EUSML-Inference App runs at <strong>~21.28 FPS</strong> for use during live procedures.',
         },
       ]}
       image={{ src: '~/assets/images/eusml.png', alt: 'EUS-ML — add project image' }}
@@ -120,12 +129,14 @@ const team = [
           > (finding the pancreas and tumor) and <strong>Classification</strong> (determining if a patient has cancer). The
           team utilized a dataset comprising 400+ annotated patient videos.
         </p>
+        <p class="text-sm font-medium text-gray-700 mt-4">Key results</p>
       </Fragment>
     </Content>
 
     <Content
       id="fatty-liver"
       isReversed
+      classes={{ container: 'py-4 md:py-6' }}
       tagline="Project"
       title="Fatty-Liver Diagnosis"
       subtitle="Differentiating fatty liver from non-fatty liver using AI and widely available ultrasound."
@@ -151,20 +162,23 @@ const team = [
 
     <Content
       id="vr-heart"
+      classes={{ container: 'py-4 md:py-6' }}
       tagline="Project"
       title="VR-Heart"
       subtitle="3D heart visualization from CT for Congenital Heart Disease (CHD) and VR surgical consultations."
       titleAlign="left"
       items={[
-        { title: 'Whole heart segmentation', description: '0.9 DICE score for whole heart segmentation (bloodpool).' },
         {
-          title: 'Chamber and vessel segmentation',
-          description: '0.783 DICE score for chamber and vessel segmentation.',
+          title: 'Whole heart (bloodpool)',
+          description: '<strong>0.90</strong> DICE score — full heart segmentation from CT.',
+        },
+        {
+          title: 'Chambers & vessels',
+          description: '<strong>0.78</strong> DICE score — chamber and vessel segmentation.',
         },
         {
           title: 'VR & 3D Lab',
-          description:
-            'A VR and 3D Lab where surgeons perform VR consultations to gain confidence for complex surgeries.',
+          description: 'Surgeons use VR consultations on 3D heart models to plan and rehearse complex CHD surgeries.',
         },
       ]}
       image={{ src: '~/assets/images/vr-heart.png', alt: 'VR-Heart — add project image' }}
@@ -175,12 +189,14 @@ const team = [
           (CHD). The team used AI to automate the segmentation of the heart from CT scans (reducing manual time from 2–3
           hours), allowing the heart models to be loaded into Virtual Reality for surgical consultations.
         </p>
+        <p class="text-sm font-medium text-gray-700 mt-4">Key results</p>
       </Fragment>
     </Content>
 
     <Content
       id="ulcerative-colitis"
       isReversed
+      classes={{ container: 'py-4 md:py-6' }}
       tagline="Project"
       title="Ulcerative Colitis Diagnosis"
       subtitle="AI to assess severity of IBD / Ulcerative Colitis and reduce reliance on biopsies."
@@ -212,14 +228,14 @@ const team = [
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 justify-items-center">
         {
           topTeam.map((person) => (
-            <div class="flex flex-col items-center text-center w-full max-w-[200px] md:max-w-[220px]">
-              <div class="w-40 sm:w-44 aspect-[4/3] rounded-lg overflow-hidden bg-gray-100 dark:bg-slate-700 mb-2 flex-shrink-0">
+            <div class="flex flex-col items-center text-center w-full max-w-[180px] md:max-w-[200px]">
+              <div class="w-36 h-36 sm:w-36 sm:h-36 aspect-square rounded-lg overflow-hidden bg-gray-100 dark:bg-slate-700 mb-2 flex-shrink-0">
                 <Image
                   src={person.image}
                   alt={person.name}
-                  width={352}
-                  height={264}
-                  widths={[280, 352]}
+                  width={160} 
+                  height={160}
+                  widths={[160, 160]}
                   sizes="(max-width: 640px) 160px, 176px"
                   class="w-full h-full object-cover"
                 />

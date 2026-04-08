@@ -9,14 +9,14 @@ site:
 # Default SEO metadata
 metadata:
   title:
-    default: Tex Nano
-    template: '%s — Tex Nano'
-  description: 'Medical AI research team. We develop AI methods and tools for healthcare—diagnostics, medical language models, and research platforms.'
+    default: TexNano — Medical AI Research
+    template: '%s — TexNano'
+  description: 'TexNano develops real-time AI for medical diagnosis: pancreatic cancer, liver disease, heart conditions. Medical AI research at Amrita Institute of Medical Sciences, Kochi.'
   robots:
     index: true
     follow: true
   openGraph:
-    site_name: Tex Nano
+    site_name: TexNano
     images:
       - url: '~/assets/images/default.png'
         width: 1200

@@ -22,8 +22,8 @@ const whenExternalScripts = (items: (() => AstroIntegration) | (() => AstroInteg
   hasExternalScripts ? (Array.isArray(items) ? items.map((item) => item()) : [items()]) : [];
 
 export default defineConfig({
-  site: process.env.SITE_URL || 'https://example.github.io',
-  base: '/texnano-site/',
+  site: process.env.SITE_URL || 'https://texnano-site.pages.dev',
+  base: process.env.ASTRO_BASE_PATH || '/',
   output: 'static',
 
   integrations: [
