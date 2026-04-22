@@ -28,7 +28,7 @@ const team = [
   { name: 'Gautham Krishnan', designation: 'AI Engineer', image: '~/assets/images/gautham.jpeg' },
   { name: 'Anshuman Swain', designation: 'AI Engineer', image: '~/assets/images/anshuman.jpeg' },
   { name: 'Anushka Kaimal', designation: 'AI Engineer', image: '~/assets/images/anushka.jpeg' },
-  { name: 'Aniketh ', designation: 'AI Engineer', image: '~/assets/images/aniketh.png' },
+  { name: 'Aniketh', designation: 'AI Engineer', image: '~/assets/images/aniketh.png' },
   { name: 'Srisharanyan', designation: 'AI Engineer', image: '~/assets/images/sharan.png' },
 ];
 ---
@@ -37,7 +37,7 @@ const team = [
   <Hero
     actions={[
       { variant: 'primary', text: 'Our Research', href: '#research' },
-      { text: 'Contact', href: 'mailto:anshumanswain@am.amrita.edu' },
+      { text: 'Contact', href: '#contact-cta' },
     ]}
   >
     <Fragment slot="title">
@@ -120,7 +120,7 @@ const team = [
           description: 'EUSML-Inference App runs at <strong>~21.28 FPS</strong> for use during live procedures.',
         },
       ]}
-      image={{ src: '~/assets/images/eusml.png', alt: 'EUS-ML — add project image' }}
+      image={{ src: '~/assets/images/eusml.png', alt: 'EUS-ML pancreatic cancer detection from endoscopic ultrasound' }}
     >
       <Fragment slot="content">
         <p class="mb-4">
@@ -148,7 +148,7 @@ const team = [
             'The project aims to achieve accuracy similar to Fibroscan while drastically reducing the cost of testing from ₹3,000–₹10,000 to approximately ₹600–₹800 per test, expanding access to millions.',
         },
       ]}
-      image={{ src: '~/assets/images/liver.png', alt: 'Fatty-Liver Diagnosis — add project image' }}
+      image={{ src: '~/assets/images/liver.png', alt: 'Fatty liver diagnosis using ultrasound imaging' }}
     >
       <Fragment slot="content">
         <p class="mb-4">
@@ -181,7 +181,7 @@ const team = [
           description: 'Surgeons use VR consultations on 3D heart models to plan and rehearse complex CHD surgeries.',
         },
       ]}
-      image={{ src: '~/assets/images/vr-heart.png', alt: 'VR-Heart — add project image' }}
+      image={{ src: '~/assets/images/vr-heart.png', alt: 'VR heart visualization for congenital heart disease surgery' }}
     >
       <Fragment slot="content">
         <p class="mb-4">
@@ -202,7 +202,7 @@ const team = [
       subtitle="AI to assess severity of IBD / Ulcerative Colitis and reduce reliance on biopsies."
       titleAlign="left"
       items={[]}
-      image={{ src: '~/assets/images/ulcerative-colitis.png', alt: 'Ulcerative Colitis Diagnosis — add project image' }}
+      image={{ src: '~/assets/images/ulcerative-colitis.png', alt: 'AI-assisted ulcerative colitis severity assessment' }}
     >
       <Fragment slot="content">
         <p class="mb-4">
@@ -228,7 +228,7 @@ const team = [
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 justify-items-center">
         {
           topTeam.map((person) => (
-            <div class="flex flex-col items-center text-center w-full max-w-[180px] md:max-w-[200px]">
+            <div class="flex flex-col items-center text-center w-full max-w-[200px] sm:max-w-[220px]">
               <div class="w-36 h-36 sm:w-36 sm:h-36 aspect-square rounded-lg overflow-hidden bg-gray-100 dark:bg-slate-700 mb-2 flex-shrink-0">
                 <Image
                   src={person.image}
@@ -251,7 +251,7 @@ const team = [
       <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 gap-5 md:gap-6 justify-items-center">
         {
           team.map((person) => (
-            <div class="flex flex-col items-center text-center w-full max-w-[140px] sm:max-w-[160px]">
+            <div class="flex flex-col items-center text-center w-full max-w-[160px] sm:max-w-[180px]">
               <div class="w-24 h-24 sm:w-28 sm:h-28 rounded-lg overflow-hidden bg-gray-100 dark:bg-slate-700 mb-2 flex-shrink-0">
                 <Image
                   src={person.image}
@@ -274,7 +274,7 @@ const team = [
 
   <CallToAction
     id="contact-cta"
-    actions={[{ variant: 'primary', text: 'Get in touch', href: 'mailto:anshumanswain@am.amrita.edu' }]}
+    actions={[{ variant: 'primary', text: 'Get in touch', href: 'mailto:gilad.gressel@am.amrita.edu?cc=anshumanswain@am.amrita.edu' }]}
   >
     <Fragment slot="title"> Work with us </Fragment>
     <Fragment slot="subtitle">

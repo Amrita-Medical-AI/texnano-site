@@ -2,14 +2,19 @@ export const headerData = {
   links: [
     { text: 'Research', href: '/#research' },
     { text: 'Team', href: '/#team' },
-    { text: 'Contact', href: 'mailto:anshumanswain@am.amrita.edu' },
+    { text: 'Blog', href: '/blog' },
+    { text: 'Contact', href: 'mailto:gilad.gressel@am.amrita.edu?cc=anshumanswain@am.amrita.edu' },
   ],
   actions: [],
 };
 
 export const footerData = {
   links: [],
-  secondaryLinks: [],
+  secondaryLinks: [
+    { text: 'Research', href: '/#research' },
+    { text: 'Team', href: '/#team' },
+    { text: 'Blog', href: '/blog' },
+  ],
   socialLinks: [
     {
       ariaLabel: 'TexNano on LinkedIn',
@@ -18,6 +23,6 @@ export const footerData = {
     },
   ],
   footNote: `
-    <span class="text-gray-700">TexNano</span> · Medical AI Research
+    <span class="text-gray-700">TexNano</span> · Medical AI Research · &copy; ${new Date().getFullYear()}
   `,
 };

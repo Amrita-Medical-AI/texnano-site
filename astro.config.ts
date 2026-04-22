@@ -22,9 +22,18 @@ const whenExternalScripts = (items: (() => AstroIntegration) | (() => AstroInteg
   hasExternalScripts ? (Array.isArray(items) ? items.map((item) => item()) : [items()]) : [];
 
 export default defineConfig({
-  site: process.env.SITE_URL || 'https://texnano-site.pages.dev',
+  site: process.env.SITE_URL || 'https://texnano.com',
   base: process.env.ASTRO_BASE_PATH || '/',
   output: 'static',
+
+  redirects: {
+    '/services': '/',
+    '/pricing': '/',
+    '/solutions': '/',
+    '/contact': '/',
+    '/projects': '/#research',
+    '/team': '/#team',
+  },
 
   integrations: [
     tailwind({

@@ -10,8 +10,11 @@ const {
   icon = '',
   class: className = '',
   type,
+  href,
   ...rest
 } = Astro.props;
+
+const isExternal = href && (href.startsWith('mailto:') || href.startsWith('tel:') || href.startsWith('http'));
 
 const variants = {
   primary: 'btn-primary',
@@ -30,7 +33,9 @@ const variants = {
   ) : (
     <a
       class={twMerge(variants[variant] || '', className)}
+      href={href}
       {...(target ? { target: target, rel: 'noopener noreferrer' } : {})}
+      {...(isExternal ? { 'data-astro-reload': true } : {})}
       {...rest}
     >
       <Fragment set:html={text} />
