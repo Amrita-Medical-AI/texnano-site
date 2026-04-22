@@ -25,8 +25,9 @@ const topTeam = [
 ];
 const team = [
   { name: 'Abhijit Ramesh', designation: 'Lead Engineer', image: '~/assets/images/abhijit.png' },
-  { name: 'Gautham Krishnan', designation: 'AI Engineer', image: '~/assets/images/gautham.jpeg' },
+  { name: 'Giridhar Shenoy', designation: 'Project Manager', image: '~/assets/images/giri.jpeg' },
   { name: 'Anshuman Swain', designation: 'AI Engineer', image: '~/assets/images/anshuman.jpeg' },
+  { name: 'Gautham Krishnan', designation: 'AI Engineer', image: '~/assets/images/gautham.jpeg' },
   { name: 'Anushka Kaimal', designation: 'AI Engineer', image: '~/assets/images/anushka.jpeg' },
   { name: 'Aniketh', designation: 'AI Engineer', image: '~/assets/images/aniketh.png' },
   { name: 'Srisharanyan', designation: 'AI Engineer', image: '~/assets/images/sharan.png' },
@@ -248,7 +249,7 @@ const team = [
       </div>
     </div>
     <div class="max-w-5xl mx-auto px-4 sm:px-6 py-5 md:py-6 border-t border-gray-200 dark:border-slate-700">
-      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 gap-5 md:gap-6 justify-items-center">
+      <div class="flex flex-wrap justify-center gap-5 md:gap-6">
         {
           team.map((person) => (
             <div class="flex flex-col items-center text-center w-full max-w-[160px] sm:max-w-[180px]">
