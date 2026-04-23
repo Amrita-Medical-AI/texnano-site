@@ -1,6 +1,6 @@
 site:
   name: Tex Nano
-  site: 'https://texnano.com'
+  site: 'https://texnano.in'
   base: '/'
   trailingSlash: false
 

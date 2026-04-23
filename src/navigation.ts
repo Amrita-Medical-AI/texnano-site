@@ -3,7 +3,7 @@ export const headerData = {
     { text: 'Research', href: '/#research' },
     { text: 'Team', href: '/#team' },
     { text: 'Blog', href: '/blog' },
-    { text: 'Contact', href: 'mailto:gilad.gressel@am.amrita.edu?cc=anshumanswain@am.amrita.edu' },
+    { text: 'Contact', href: 'mailto:gilad.gressel@am.amrita.edu' },
   ],
   actions: [],
 };
