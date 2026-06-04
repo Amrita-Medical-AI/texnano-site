@@ -21,10 +21,9 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      # site URL and base path are defined in src/config.yaml (single source of
+      # truth) and resolve to https://texnano.in served from the apex root (/).
       - name: Build
-        env:
-          SITE_URL: https://${{ github.repository_owner }}.github.io
-          ASTRO_BASE_PATH: /${{ github.event.repository.name }}/
         run: npm run build
 
       - name: Deploy to gh-pages branch
@@ -33,3 +32,6 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
           force_orphan: true
+          # force_orphan wipes the branch each deploy; cname rewrites the CNAME
+          # file every time so the apex custom domain survives.
+          cname: texnano.in

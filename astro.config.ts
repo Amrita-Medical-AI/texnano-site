@@ -22,8 +22,10 @@ const whenExternalScripts = (items: (() => AstroIntegration) | (() => AstroInteg
   hasExternalScripts ? (Array.isArray(items) ? items.map((item) => item()) : [items()]) : [];
 
 export default defineConfig({
-  site: process.env.SITE_URL || 'https://texnano.in',
-  base: process.env.ASTRO_BASE_PATH || '/',
+  // `site` and `base` are the single source of truth in `src/config.yaml` and are
+  // applied by the astrowind integration (see vendor/integration) via updateConfig(),
+  // which also feeds the permalink/SEO helpers. Declaring them here too would be a
+  // second, silently-overridden copy, so they intentionally live only in config.yaml.
   output: 'static',
 
   redirects: {
